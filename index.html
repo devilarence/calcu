@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap Calculator</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        
+                        <input type="text" class="form-control mb-2" id="firstNumber" placeholder="First Number" readonly>
+                        <input type="text" class="form-control mb-2" id="secondNumber" placeholder="Second Number" readonly>
+
+                        <input type="text" class="form-control mb-2 text-white" id="result" placeholder="Result" readonly>
+
+                        <select class="form-select mb-2" id="operator" title="Select an operator">
+                            <option value="+">Addition (+)</option>
+                            <option value="-">Subtraction (-)</option>
+                            <option value="*">Multiplication (×)</option>
+                            <option value="/">Division (÷)</option>
+                        </select>
+                        <div class="row g-2">
+                            <div class="col-4"><button class="btn btn-light w-100" onclick="addNumber('7')">7</button></div>
+                            <div class="col-4"><button class="btn btn-light w-100" onclick="addNumber('8')">8</button></div>
+                            <div class="col-4"><button class="btn btn-light w-100" onclick="addNumber('9')">9</button></div>
+                            <div class="col-4"><button class="btn btn-light w-100" onclick="addNumber('4')">4</button></div>
+                            <div class="col-4"><button class="btn btn-light w-100" onclick="addNumber('5')">5</button></div>
+                            <div class="col-4"><button class="btn btn-light w-100" onclick="addNumber('6')">6</button></div>
+                            <div class="col-4"><button class="btn btn-light w-100" onclick="addNumber('1')">1</button></div>
+                            <div class="col-4"><button class="btn btn-light w-100" onclick="addNumber('2')">2</button></div>
+                            <div class="col-4"><button class="btn btn-light w-100" onclick="addNumber('3')">3</button></div>
+                            <div class="col-4"><button class="btn btn-light w-100" onclick="addNumber('0')">0</button></div>
+                            <div class="col-4"><button class="btn btn-light w-100" onclick="addNumber('.')">.</button></div>
+                            <div class="col-4"><button class="btn btn-danger w-100" onclick="clearDisplay()">C</button></div>
+                        </div>
+                        <button class="btn btn-primary w-100 mt-2" onclick="calculate()">=</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+   <script src="calculator.js"></script>
+</body>
+</html>
