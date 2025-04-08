@@ -17,26 +17,32 @@ function clearDisplay() {
     isFirstNumber = true;
 }
 
-function toggleInput() {
-    isFirstNumber = !isFirstNumber;
-}
-
 function calculate() {
     const num1 = parseFloat(document.getElementById('firstNumber').value);
     const num2 = parseFloat(document.getElementById('secondNumber').value);
     const operator = document.getElementById('operator').value;
+    const resultDisplay = document.getElementById('result');
     
-    if (isNaN(num1) || isNaN(num2)) return;
+    if (isNaN(num1) || isNaN(num2)) {
+        resultDisplay.value = 'Invalid input';
+        return;
+    }
     
     let result;
     switch(operator) {
         case '+': result = num1 + num2; break;
         case '-': result = num1 - num2; break;
         case '*': result = num1 * num2; break;
-        case '/': result = num2 !== 0 ? num1 / num2 : 'Error: Division by zero'; break;
+        case '/': 
+            if (num2 === 0) {
+                result = 'Cannot divide by zero';
+            } else {
+                result = num1 / num2;
+            }
+            break;
     }
     
-    document.getElementById('result').value = result;
+    resultDisplay.value = typeof result === 'number' ? result.toFixed(2) : result;
 }
 
 // Add click event to inputs to switch between them
